@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>CRUD de Productos</h1>
+    </header>
+
+    <!--Contenido principal-->
+    <section>
+        <h2>Registrar / Editar Producto</h2>
+
+        <form id="form-producto" action="">
+            <input type="hidden" id="producto-id">
+
+            <div class="form-group">
+                <label for="nombre">Nombre del producto:</label>
+                <input type="text" id="nombre" required placeholder="Ej. Monitor 24 pulgadas">
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" required placeholder="Ej. Panel IPS Full HD">
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio ($):</label>
+                <input type="number" id="precio" step="0.01" min="0" required placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Stock (Cantidad):</label>
+                <input type="number" id="stock" min="0" required placeholder="0">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="btn-guardar" class="buttons">Guardar Datos</button>
+                <button type="button" id="btn-cancelar" class="buttons">Cancelar</button>
+            </div>
+        </form>
+    </section>
+    <hr>
+    <section>
+        <h2>Lista de productos</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-productos">
+                <tr>
+                    <td colspan="6">Cargando productos...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
